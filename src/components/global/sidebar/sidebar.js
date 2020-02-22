@@ -1,11 +1,9 @@
 import React from 'react';
 
-import SidebarStyled from 'Styled/global/sidebar';
+import Inventory from 'Components/inventory';
 
 const Sidebar = () => (
-	<SidebarStyled>
-		Foobar
-	</SidebarStyled>
+	<Inventory />
 );
 
 export default Sidebar;
