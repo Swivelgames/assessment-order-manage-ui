@@ -8,8 +8,8 @@ const InventoryColorDot = styled.span`
 	width: 16px;
 	border-radius: 100px/100px;
 	background: ${({ color }) => color || 'black'};
-	margin-left: 10px;
-	vertical-align: middle;
+	margin: 2px 2px 2px 10px;
+	vertical-align: bottom;
 `;
 
 export default InventoryColorDot;

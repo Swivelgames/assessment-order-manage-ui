@@ -10,7 +10,7 @@ const InventoryItemCount = styled.data`
 	border-radius: 3px;
 	padding: 2px;
 	margin-right: 10px;
-	vertical-align: middle;
+	vertical-align: bottom;
 
 	color: #ffffff;
 	font-size: 1.2rem;
