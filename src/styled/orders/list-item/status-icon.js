@@ -20,10 +20,8 @@ const IconDelete = icon('images/icon-delete.svg');
 const IconFulfilled = icon('images/icon-fulfilled.svg');
 
 const StatusIcon = styled.figure`
-	height: 30px;
-	width: 30px;
-	padding: 0;
-	margin: 5px;
+	margin: 0;
+	padding: 5px;
 `;
 
 const StatusIconHelper = ({ type }) => (

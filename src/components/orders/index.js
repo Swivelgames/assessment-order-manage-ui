@@ -1,15 +1,30 @@
 import React from 'react';
-import styled from 'styled-components';
 
-import OrderLi from 'Styled/orders/list-item';
-import StatusIcon from 'Styled/orders/list-item/status-icon';
+import OrdersList from 'Styled/orders/list';
+
+import OrderLi from './list-item';
+
+const type = "fulfilled";
 
 const Orders = () => (
-	<div>
-		<OrderLi type="in-progress">
-			<StatusIcon type="in-progress" />
-		</OrderLi>
-	</div>
+	<OrdersList>
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+		<OrderLi status="in-progress" time="02:49" number="78" recipes={[]} />
+	</OrdersList>
 );
 
 export default Orders;

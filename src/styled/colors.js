@@ -14,7 +14,7 @@ export const red = reds.normal;
 
 export const greens = {
 	brightest: "#C8E6C9",
-	normal: "#F44336",
+	normal: "#43A047",
 	darker: "#388E3C",
 	darkest: "#2E7D32"
 };
@@ -51,3 +51,20 @@ export const gradients = {
 	}
 };
 
+export const typeColors = {
+	'pending': teal,
+	'in-progress': blue,
+	'deleted': red,
+	'fulfilled': green
+};
+
+export const typeGrads = {
+	'pending': gradients.black.dark,
+	'in-progress': gradients.black.dark,
+	'deleted': gradients.red,
+	'fulfilled': gradients.green
+}
+
+export const getColor = ({ type = 'pending' }) => typeColors[type];
+export const getGradP = ({ type = 'pending' }) => typeGrads[type][0];
+export const getGradS = ({ type = 'pending' }) => typeGrads[type][1];
