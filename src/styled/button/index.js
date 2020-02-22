@@ -6,6 +6,7 @@ import { black } from 'Styled/colors';
 const d = (name, def) => props => props[name] ?? def;
 
 const Button = styled.button`
+	cursor: pointer;
 	border: 0;
 	border-radius: 100px;
 	padding: 10px 20px;

@@ -7,6 +7,7 @@ import * as colors from 'Styled/colors';
 const c = (y,n) => ({ checked }) => checked ? y : n;
 
 const FilterPill = styled.label`
+	cursor: pointer;
 	display: block;
 	background: ${c('#ffffff','rgba(0,0,0,0.3)')};
 	opacity: ${c(1, 0.7)};
