@@ -28,7 +28,7 @@ const getAvailableFilters = items => Array.from(
 	new Set(
 		Object.keys(items)
 			.map(id => items[id])
-			.reduce((a, o) => [...a, o.colors], [])
+			.reduce((a, o) => [...a, ...o.colors], [])
 	)
 );
 
@@ -50,11 +50,11 @@ const mapStateToProps = ({
 }) => ({
 	filter,
 	filtersAvailable: getAvailableFilters(items),
-	sections: {
-		"Out Of Stock": applyFilters(filter, getOutOfStock(items)),
-		"Running Out": applyFilters(filter, getRunningOut(items, limit)),
-		"In Stock": applyFilters(filter, getInStock(items, limit)),
-	}
+	sections: [
+		{ label: "Out Of Stock", items: applyFilters(filter, getOutOfStock(items)) },
+		{ label: "Running Out", items: applyFilters(filter, getRunningOut(items, limit)) },
+		{ label: "In Stock", items: applyFilters(filter, getInStock(items, limit)) },
+	]
 });
 
 const ConnectedInventory = connect(mapStateToProps)(Inventory);

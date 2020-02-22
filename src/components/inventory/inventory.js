@@ -4,57 +4,18 @@ import SidebarStyled from 'Styled/global/sidebar';
 
 import InventoryHeading from 'Styled/inventory/heading';
 
-import Filters from 'Styled/inventory/filters';
-import FilterPill from 'Styled/inventory/filters/pill';
+import FiltersSection from './filters';
+import Sections from './sections';
 
-import Section from 'Styled/inventory/section';
-import SectionLabel from 'Styled/inventory/section/label';
-import SectionList from 'Styled/inventory/section/list';
-import SectionListItem from 'Styled/inventory/section/list-item';
-import ColorDot from 'Styled/inventory/section/list-item/color';
-import ItemCount from 'Styled/inventory/section/list-item/count';
-
-const Inventory = () => (
+const Inventory = ({
+	filter, filtersAvailable,
+	sections
+}) => (
 	<SidebarStyled>
 		<InventoryHeading>Inventory</InventoryHeading>
 
-		<Filters>
-			<FilterPill checked={true}>All</FilterPill>
-			<FilterPill color="red">Red</FilterPill>
-			<FilterPill color="green">Green</FilterPill>
-			<FilterPill color="blue">Blue</FilterPill>
-			<FilterPill color="cyan">Cyan</FilterPill>
-			<FilterPill color="yellow">Yellow</FilterPill>
-			<FilterPill color="purple">Purple</FilterPill>
-			<FilterPill color="white">white</FilterPill>
-		</Filters>
-
-		<Section>
-			<SectionLabel>Out Of Stock &mdash; 2</SectionLabel>
-			<SectionList>
-				<SectionListItem>
-					<div>
-						<ItemCount danger={false}>240</ItemCount>
-						Foobar
-					</div>
-					<div>
-						<ColorDot color="red" />
-						<ColorDot color="yellow" />
-					</div>
-				</SectionListItem>
-				<SectionListItem>
-					<div>
-						<ItemCount danger={true}>240</ItemCount>
-						Foobar
-					</div>
-					<div>
-						<ColorDot color="red" />
-						<ColorDot color="yellow" />
-					</div>
-				</SectionListItem>
-				<SectionListItem>baz quux</SectionListItem>
-			</SectionList>
-		</Section>
+		<FiltersSection selection={filter} filters={filtersAvailable} />
+		<Sections sections={sections} />
 	</SidebarStyled>
 );
 
