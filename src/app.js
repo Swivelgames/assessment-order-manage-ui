@@ -3,14 +3,13 @@ import React from 'react';
 // Router
 // import Router from 'router';
 // Components
-import Main from 'Styled/global/main';
-// import Toolbar from 'styled/global/toolbar';
-// import Sidebar from 'styled/global/sidebar';
-// import Body from 'styled/global/body';
+import Main from 'Components/global/main';
+
+import ActiveOrders from 'Pages/orders/active';
 
 const App = () => (
 	<Main>
-		Hello World!
+		<ActiveOrders />
 	</Main>
 );
 

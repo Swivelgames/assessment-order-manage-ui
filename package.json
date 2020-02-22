@@ -4,8 +4,8 @@
   "description": "Lana Card Assessment",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack-cli serve --mode development",
-    "build": "npx webpack --mode production",
+    "start": "node_modules/.bin/webpack-dev-server --mode development",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Joseph Dalrymple <joseph@neue.dev>",
@@ -24,8 +24,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
-    "@webpack-cli/init": "^0.3.0",
-    "@webpack-cli/serve": "^0.2.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   }
 }

@@ -21,6 +21,7 @@ module.exports = (env, opts) => {
 			alias: {
 				Actions: path.join(srcPath, 'actions'),
 				Components: path.join(srcPath, 'components'),
+				Pages: path.join(srcPath, 'pages'),
 				Reducers: path.join(srcPath, 'reducers'),
 				Styled: path.join(srcPath, 'styled'),
 			}
@@ -29,7 +30,6 @@ module.exports = (env, opts) => {
 			contentBase: [distPath, assetsPath],
 			host: '0.0.0.0',
 			port: 3000,
-			color: true,
 			hot: true,
 			index: 'index.html'
 		},
@@ -38,7 +38,7 @@ module.exports = (env, opts) => {
 				{
 					test: /\.jsx?$/,
 					use: ['babel-loader']
-				},
+				}
 			]
 		}
 	};
