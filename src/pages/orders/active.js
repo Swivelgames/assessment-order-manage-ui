@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Provider } from 'react-redux';
+
+import store from 'Store';
 
 import Orders from 'Components/orders';
 import StatusIcon from 'Styled/orders/list-item/status-icon';
 
-const Page = styled.section`
+const Page = styled(Provider)`
 `;
 
 const PageH1 = styled.h1`
@@ -14,7 +17,7 @@ const PageH1 = styled.h1`
 `;
 
 const ActiveOrdersPage = () => (
-	<Page>
+	<Page store={store}>
 		<PageH1>Active Orders</PageH1>
 		<Orders />
 	</Page>

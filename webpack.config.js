@@ -23,6 +23,7 @@ module.exports = (env, opts) => {
 				Components: path.join(srcPath, 'components'),
 				Pages: path.join(srcPath, 'pages'),
 				Reducers: path.join(srcPath, 'reducers'),
+				Store$: path.join(srcPath, 'store.js'),
 				Styled: path.join(srcPath, 'styled'),
 			}
 		},
