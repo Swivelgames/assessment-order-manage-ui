@@ -16,6 +16,10 @@ const InventoryListItem = styled.div`
 	&:last-child {
 		border-bottom: 0px;
 	}
+
+	&, & > * {
+		vertical-align: middle;
+	}
 `;
 
 export default InventoryListItem;

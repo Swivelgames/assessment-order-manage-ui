@@ -33,8 +33,20 @@ const Inventory = () => (
 			<SectionLabel>Out Of Stock &mdash; 2</SectionLabel>
 			<SectionList>
 				<SectionListItem>
-					<ItemCount>240</ItemCount>
-					Foobar
+					<div>
+						<ItemCount danger={false}>240</ItemCount>
+						Foobar
+					</div>
+					<div>
+						<ColorDot color="red" />
+						<ColorDot color="yellow" />
+					</div>
+				</SectionListItem>
+				<SectionListItem>
+					<div>
+						<ItemCount danger={true}>240</ItemCount>
+						Foobar
+					</div>
 					<div>
 						<ColorDot color="red" />
 						<ColorDot color="yellow" />
