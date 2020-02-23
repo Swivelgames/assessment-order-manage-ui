@@ -6,8 +6,8 @@ import Toolbar from 'Components/global/toolbar';
 import Sidebar from 'Components/global/sidebar';
 import Body from 'Components/global/body';
 
-const Main = ({ children }) => (
-	<MainStyled>
+const Main = ({ children, modalOpen }) => (
+	<MainStyled modalOpen={modalOpen}>
 		<Toolbar />
 		<Body>
 			{children}

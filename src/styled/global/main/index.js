@@ -19,6 +19,12 @@ const Main = styled.main`
 	);
 
 	font-size: 1.2rem;
+
+	${({ modalOpen }) => (modalOpen ? `
+		& > * {
+			filter: blur(10px);
+		}
+	` : '')}
 `;
 
 export default Main;

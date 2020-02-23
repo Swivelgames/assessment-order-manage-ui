@@ -7,6 +7,7 @@ import store from 'Store';
 //import Router from 'router';
 // Components
 import Main from 'Components/global/main';
+import Modals from 'Components/global/modals';
 
 import ActiveOrders from 'Pages/orders/active';
 
@@ -15,6 +16,7 @@ const App = () => (
 		<Main>
 			<ActiveOrders />
 		</Main>
+		<Modals />
 	</Provider>
 );
 

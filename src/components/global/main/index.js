@@ -1,5 +1,11 @@
+import { connect } from 'react-redux';
+
 import Main from './main';
 
-// Connect here
+const mapStateToProps = ({ modal: { open }}) => ({
+	modalOpen: open ? true : false
+});
 
-export default Main;
+const ConnectedMain = connect(mapStateToProps)(Main);
+
+export default ConnectedMain;
