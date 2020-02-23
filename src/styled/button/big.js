@@ -14,11 +14,11 @@ const BigButton = styled(BorderedButton)`
 	font-size: 1.8rem;
 	font-weight: 700;
 
-	background: rgba(0,0,0,0.3);
+	background: ${d('background', 'rgba(0,0,0,0.3)')};
 	border: 4px solid ${d('color', blue)};
 	border-radius: 6px;
 
-	margin: 0;
+	margin: ${d('margin', '0')};
 	margin-top: 30px;
 	padding: 20px;
 
