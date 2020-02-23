@@ -9,13 +9,13 @@ import OrderInfo from './timer';
 import PendingButtons from './buttons/pending';
 import InProgressButtons from './buttons/in-progress';
 
-const OrderLi = ({ order, startOrder, fulfillOrder, cancelOrder }) => {
+const OrderLi = ({ order, autoStart, startOrder, fulfillOrder, cancelOrder }) => {
 	const { status: type } = order;
 
 	return (
 		<OrderLiStyled type={type}>
 			<StatusIcon type={type} />
-			<OrderInfo type={type} {...order} />
+			<OrderInfo type={type} autoStart={autoStart} {...order} />
 			{type === 'pending' && (
 				<PendingButtons startOrder={startOrder} cancelOrder={cancelOrder} {...order} />
 			)}

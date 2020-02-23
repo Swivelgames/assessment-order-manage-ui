@@ -6,6 +6,7 @@ import {
 const initialState = {
 	orderFilter: ['pending', 'in-progress'],
 	orderUndoHalflife: 10 * 1000, // 10 Seconds
+	orderAutoStartTime: 0.2 * 60 * 1000,
 	inventoryFilter: [],
 	inventoryLowQty: 30,
 };

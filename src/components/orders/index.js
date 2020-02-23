@@ -35,9 +35,11 @@ const mapStateToProps = ({
 	orders,
 	ui: {
 		orderFilter: filter,
-		orderUndoHalflife: undoDuration
+		orderUndoHalflife: undoDuration,
+		orderAutoStartTime: autoStart
 	}
 }) => ({
+	autoStart,
 	orders: applyFilters(
 		filter,
 		prepareOrders(orders),

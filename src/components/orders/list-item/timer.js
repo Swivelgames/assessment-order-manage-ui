@@ -3,7 +3,12 @@ import React from 'react';
 import OrderInfo from 'Styled/orders/list-item/info';
 
 const f = n => `${n}`.padStart(2,0);
-const formatTime = (m, s) => `${f(m)}:${f(Math.abs(s))}`;
+
+const formatTime = (m, s) => `${
+	m === 0 && s < 0 ? '-0' : f(m)
+}:${
+	f(Math.abs(s))
+}`;
 
 const calcTimeSince = (a, b) => {
 	const diff = Math.round((a - b) / 1000);
@@ -28,11 +33,11 @@ class OrderTimer extends React.Component {
 		this.timeout = -1;
 	}
 
-	static getTime(status, created, started, updated) {
+	static getTime({ status, created, started, updated, autoStart }) {
 		let timeSince = [0, 0];
 		if (status === 'pending') {
 			timeSince = calcTimeSince(
-				Date.now() - (3 * 60 * 1000), created
+				Date.now(), created + autoStart
 			);
 		} else if (status === 'fulfilled') {
 			timeSince = calcTimeSince(
@@ -48,8 +53,7 @@ class OrderTimer extends React.Component {
 	}
 
 	static getDerivedStateFromProps(props, state) {
-		const { status, created, started, updated } = props;
-		const time = OrderTimer.getTime(status, created, started, updated);
+		const time = OrderTimer.getTime(props);
 		return { ...state, time };
 	}
 
@@ -68,8 +72,7 @@ class OrderTimer extends React.Component {
 	}
 
 	updateTimer() {
-		const { status, created, started, updated } = this.props;
-		const time = OrderTimer.getTime(status, created, started, updated);
+		const time = OrderTimer.getTime(this.props);
 		this.setState({ time }, () => {
 			this.startTimeout();
 		});

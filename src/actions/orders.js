@@ -19,12 +19,7 @@ export const startOrder = id => (dispatch, getAppState) => {
 
 	dispatch({
 		type: ORDER_STARTED,
-		payload: {
-			id,
-			...order,
-			status: 'in-progress',
-			started: Date.now(),
-		}
+		payload: { id }
 	});
 };
 
@@ -39,11 +34,7 @@ export const fulfillOrder = id => (dispatch, getAppState) => {
 
 	dispatch({
 		type: ORDER_FULFILLED,
-		payload: {
-			id,
-			...order,
-			status: 'fulfilled',
-		}
+		payload: { id }
 	});
 
 	// @TODO: This is a TERRIBLE SOLUTION
@@ -66,11 +57,7 @@ export const cancelOrder = id => (dispatch, getAppState) => {
 
 	dispatch({
 		type: ORDER_CANCELLED,
-		payload: {
-			id,
-			...order,
-			status: 'deleted',
-		}
+		payload: { id }
 	});
 
 	// @TODO: This is a TERRIBLE SOLUTION
@@ -83,7 +70,8 @@ export const cancelOrder = id => (dispatch, getAppState) => {
 };
 
 export const placeOrder = (order) => (dispatch, getAppState) => {
-	const { recipes, ingredients, orders } = getAppState();
+	const { recipes, ingredients, orders, ui } = getAppState();
+	const { orderAutoStartTime } = ui;
 	const { $next: orderId } = orders;
 
 	const recipeIngredients = order.reduce((a, id) => [
@@ -111,5 +99,5 @@ export const placeOrder = (order) => (dispatch, getAppState) => {
 			type: ORDER_STARTED,
 			payload: { id: orderId }
 		});
-	}, 3 * 60 * 1000);
+	}, orderAutoStartTime);
 };

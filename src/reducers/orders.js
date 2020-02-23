@@ -15,22 +15,16 @@ const initialState = {
 		status: "in-progress",
 		recipes: [ { id: 92736, qty: 3 } ],
 	},
-	1038297: {
-		created: Date.now() - (24 * 1000),
-		updated: Date.now() - (24 * 1000),
-		status: "pending",
-		recipes: [ { id: 92736, qty: 3 } ],
-	},
 };
 
-const updateOrderById = (id, order, list) => {
+const updateOrderById = (id, status, list) => {
 	const newOrder = {
-		created: order.created,
-		started: order.started,
-		status: order.status,
-		recipes: order.recipes,
-		updated: Date.now()
+		...list[id], status, updated: Date.now()
 	};
+
+	if (status === 'in-progress') {
+		newOrder.started = Date.now();
+	}
 
 	return { ...list, [id]: newOrder };
 };
@@ -48,13 +42,14 @@ const createOrder = (state, recipes) => ({
 
 const OrdersReducer = (state = initialState, action) => {
 	const { type, payload = {} } = action;
-	const { id } = payload;
 
 	switch(type) {
 		case ORDER_FULFILLED:
+			return updateOrderById(payload.id, 'fulfilled', state);
 		case ORDER_STARTED:
+			return updateOrderById(payload.id, 'in-progress', state);
 		case ORDER_CANCELLED:
-			return updateOrderById(id, payload, state);
+			return updateOrderById(payload.id, 'deleted', state);
 		case ORDER_POKE:
 			// @TODO: This is a TERRIBLE SOLUTION
 			return {
