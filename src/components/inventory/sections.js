@@ -16,7 +16,7 @@ const Sections = ({ sections }) => (
 					{items.map(({ id, name, count, colors }) => (
 						<SectionListItem key={id}>
 							<div>
-								<ItemCount danger={label === 'Running Low'}>{count}</ItemCount>
+								<ItemCount danger={label !== 'In Stock'}>{count}</ItemCount>
 								{name}
 							</div>
 							<div>

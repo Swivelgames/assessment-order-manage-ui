@@ -1,5 +1,4 @@
 html, body, body > div {
-	display: flex;
 	box-sizing: border-box;
 
 	padding: 0;
@@ -12,5 +11,7 @@ html, body, body > div {
 	font-size: 10px;
 	color: #fff;
 }
+
+body { display: flex; }
 
 *, *:after, *:before { box-sizing: inherit; }
