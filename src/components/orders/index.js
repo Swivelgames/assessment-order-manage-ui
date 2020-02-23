@@ -15,7 +15,7 @@ const prepareOrders = orders => (
 const applyFilters = (filters = [], arr, halflife) => {
 	arr.sort((a, b) => a.created - b.created);
 
-	if (filters.length === 0) return arr;
+	if (filters.length === 0) return [];
 
 	return arr.filter((item) => {
 		let show = filters.indexOf(item.status) > -1;

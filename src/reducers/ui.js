@@ -7,8 +7,8 @@ import {
 
 const initialState = {
 	orderFilter: ['pending', 'in-progress'],
-	orderUndoHalflife: 3 * 1000, // 10 Seconds
-	orderAutoStartTime: 0.2 * 60 * 1000,
+	orderUndoHalflife: 3 * 1000, // 3 Seconds
+	orderAutoStartTime: 3 * 60 * 1000, // 3 minutes
 	inventoryFilter: [],
 	inventoryLowQty: 30,
 };
