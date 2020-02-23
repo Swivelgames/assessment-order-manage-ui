@@ -9,7 +9,7 @@ import ItemCount from 'Styled/inventory/section/list-item/count';
 
 const Sections = ({ sections }) => (
 	<>
-		{sections.map(({ label, items }) => (
+		{sections.map(({ label, items }) => items.length === 0 ? null : (
 			<Section key={label}>
 				<SectionLabel>{label} &mdash; {items.length}</SectionLabel>
 				<SectionList>

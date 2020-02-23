@@ -9,12 +9,18 @@ import Sections from './sections';
 
 const Inventory = ({
 	filter, filtersAvailable,
+	resetFilter, toggleFilter,
 	sections
 }) => (
 	<SidebarStyled>
 		<InventoryHeading>Inventory</InventoryHeading>
 
-		<FiltersSection selection={filter} filters={filtersAvailable} />
+		<FiltersSection
+			selection={filter}
+			filters={filtersAvailable}
+			resetFilter={resetFilter}
+			toggleFilter={toggleFilter}
+		/>
 		<Sections sections={sections} />
 	</SidebarStyled>
 );

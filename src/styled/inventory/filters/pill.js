@@ -44,9 +44,9 @@ const FilterPill = styled.label`
 	}
 `;
 
-const FilterPillHelper = props => (
+const FilterPillHelper = ({ onChange, ...props }) => (
 	<FilterPill {...props}>
-		<input type="checkbox" onChange={props.onChange} checked={props.checked} />
+		<input type="checkbox" onChange={onChange} checked={props.checked} />
 		{props.children}
 	</FilterPill>
 );

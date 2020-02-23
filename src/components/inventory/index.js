@@ -1,5 +1,10 @@
 import { connect } from 'react-redux';
 
+import {
+	resetFilter,
+	toggleFilter
+} from 'Actions/inventory';
+
 import Inventory from './inventory';
 
 const getOutOfStock = items =>
@@ -63,6 +68,14 @@ const mapStateToProps = ({
 	]
 });
 
-const ConnectedInventory = connect(mapStateToProps)(Inventory);
+const mapDispatchToProps = dispatch => ({
+	resetFilter: (...args) => dispatch(resetFilter(...args)),
+	toggleFilter: (...args) => dispatch(toggleFilter(...args))
+});
+
+const ConnectedInventory = connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Inventory);
 
 export default ConnectedInventory;
