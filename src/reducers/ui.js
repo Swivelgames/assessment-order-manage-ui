@@ -1,6 +1,6 @@
 const initialState = {
 	orderFilter: ['pending', 'in-progress'],
-	orderFadeDur: 10 * 1000, // 10 Seconds
+	orderUndoHalflife: 10 * 1000, // 10 Seconds
 	inventoryFilter: [],
 	inventoryLowQty: 30,
 };

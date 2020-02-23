@@ -33,7 +33,13 @@ const getAvailableFilters = items => Array.from(
 );
 
 const applyFilters = (filters = [], arr) => {
+	arr.sort((a, b) => {
+		console.log(a.count, b.count, a.count - b.count);
+		return a.count - b.count;
+	});
+
 	if (filters.length === 0) return arr;
+
 	return arr.filter(
 		item => filters.filter(
 			f => item.colors.indexOf(f) > -1
