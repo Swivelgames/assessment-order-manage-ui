@@ -1,11 +1,13 @@
 import {
+	UI_ORDER_FILTER_RESET,
+	UI_ORDER_FILTER_TOGGLE,
 	UI_INVENTORY_FILTER_RESET,
 	UI_INVENTORY_FILTER_TOGGLE
 } from 'Actions/types';
 
 const initialState = {
 	orderFilter: ['pending', 'in-progress'],
-	orderUndoHalflife: 10 * 1000, // 10 Seconds
+	orderUndoHalflife: 3 * 1000, // 10 Seconds
 	orderAutoStartTime: 0.2 * 60 * 1000,
 	inventoryFilter: [],
 	inventoryLowQty: 30,
@@ -22,6 +24,15 @@ const UIReducer = (state = initialState, action) => {
 	const { type, payload } = action;
 
 	switch (type) {
+		case UI_ORDER_FILTER_RESET:
+			return { ...state, orderFilter: [] };
+		case UI_ORDER_FILTER_TOGGLE:
+			return {
+				...state,
+				orderFilter: toggleFilter(
+					payload, state.orderFilter
+				)
+			};
 		case UI_INVENTORY_FILTER_RESET:
 			return { ...state, inventoryFilter: [] };
 		case UI_INVENTORY_FILTER_TOGGLE:

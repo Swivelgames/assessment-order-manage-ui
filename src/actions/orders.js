@@ -5,8 +5,23 @@ import {
 	ORDER_CANCELLED,
 	ORDER_CREATED,
 
-	INGREDIENTS_USED
-} from './types';
+	INGREDIENTS_USED,
+
+	UI_ORDER_FILTER_RESET,
+	UI_ORDER_FILTER_TOGGLE
+} from 'Actions/types';
+
+export const toggleFilter = filter => dispatch => {
+	dispatch({
+		type: UI_ORDER_FILTER_TOGGLE,
+		payload: filter
+	});
+};
+
+export const resetFilter = filter => dispatch => {
+	dispatch({ type: UI_ORDER_FILTER_RESET });
+};
+
 
 export const startOrder = id => (dispatch, getAppState) => {
 	const { orders } = getAppState();
