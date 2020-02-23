@@ -17,10 +17,10 @@ const OrderLi = ({ order, startOrder, fulfillOrder, cancelOrder }) => {
 			<StatusIcon type={type} />
 			<OrderInfo type={type} {...order} />
 			{type === 'pending' && (
-				<PendingButtons startOrder={() => {}} {...order} />
+				<PendingButtons startOrder={startOrder} cancelOrder={cancelOrder} {...order} />
 			)}
 			{type === 'in-progress' && (
-				<InProgressButtons fulfillOrder={() => {}} {...order} />
+				<InProgressButtons fulfillOrder={fulfillOrder} cancelOrder={cancelOrder} {...order} />
 			)}
 		</OrderLiStyled>
 	);

@@ -1,5 +1,9 @@
 import { connect } from 'react-redux';
 
+import {
+	startOrder, fulfillOrder, cancelOrder
+} from 'Actions/orders';
+
 import OrdersList from './list';
 
 const prepareOrders = orders => (
@@ -19,7 +23,7 @@ const applyFilters = (filters = [], arr, halflife) => {
 			// Allow items, that the filter does not apply to, the
 			// ability to linger a little while after their status
 			// has changed
-			if (item.statusTime + halflife > Date.now()) {
+			if (item.updated + halflife > Date.now()) {
 				show = true;
 			}
 		}
@@ -41,6 +45,15 @@ const mapStateToProps = ({
 	)
 });
 
-const ConnectedOrdersList = connect(mapStateToProps)(OrdersList);
+const mapDispatchToProps = dispatch => ({
+	startOrder: (...args) => dispatch(startOrder(...args)),
+	fulfillOrder: (...args) => dispatch(fulfillOrder(...args)),
+	cancelOrder: (...args) => dispatch(cancelOrder(...args))
+});
+
+const ConnectedOrdersList = connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(OrdersList);
 
 export default ConnectedOrdersList;

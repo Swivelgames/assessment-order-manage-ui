@@ -4,10 +4,10 @@ import ButtonContainer from 'Styled/orders/list-item/right-side';
 import SecondaryButton from 'Styled/button/secondary';
 import BorderedButton from 'Styled/button/bordered';
 
-const InProgressOrderButtons = ({ id, startOrder }) => {
+const InProgressOrderButtons = ({ id, fulfillOrder, cancelOrder }) => {
 	return (
 		<ButtonContainer>
-			<BorderedButton onClick={() => startOrder(id)}>Fulfill</BorderedButton>
+			<BorderedButton onClick={() => fulfillOrder(id)}>Fulfill</BorderedButton>
 			<SecondaryButton onClick={() => cancelOrder(id)}>Cancel Order</SecondaryButton>
 		</ButtonContainer>
 	);

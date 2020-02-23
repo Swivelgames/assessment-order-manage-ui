@@ -4,7 +4,7 @@ import ButtonContainer from 'Styled/orders/list-item/right-side';
 import SecondaryButton from 'Styled/button/secondary';
 import SoftButton from 'Styled/button/soft';
 
-const PendingOrderButtons = ({ id, startOrder }) => {
+const PendingOrderButtons = ({ id, startOrder, cancelOrder }) => {
 	return (
 		<ButtonContainer>
 			<SoftButton onClick={() => startOrder(id)}>Start Order</SoftButton>

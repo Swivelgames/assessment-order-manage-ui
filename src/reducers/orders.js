@@ -1,3 +1,11 @@
+import {
+	ORDER_POKE,
+	ORDER_FULFILLED,
+	ORDER_STARTED,
+	ORDER_CANCELLED,
+	ORDER_CREATED
+} from 'Actions/types';
+
 const initialState = {
 	$next: 1038298,
 	1038296: {
@@ -15,8 +23,37 @@ const initialState = {
 	},
 };
 
+const updateOrderById = (id, order, list) => {
+	const newOrder = {
+		created: order.created,
+		started: order.started,
+		status: order.status,
+		recipes: order.recipes,
+		updated: Date.now()
+	};
+
+	return { ...list, [id]: newOrder };
+};
+
 const OrdersReducer = (state = initialState, action) => {
-	return state;
+	const { type, payload = {} } = action;
+	const { id } = payload;
+
+	switch(type) {
+		case ORDER_FULFILLED:
+		case ORDER_STARTED:
+		case ORDER_CANCELLED:
+			return updateOrderById(id, payload, state);
+		case ORDER_POKE:
+			// @TODO: This is a TERRIBLE SOLUTION
+			return {
+				...state,
+				[payload.id]: { ...state[payload.id] }
+			};
+		case ORDER_CREATED:
+		default:
+			return state;
+	}
 };
 
 export default OrdersReducer;
