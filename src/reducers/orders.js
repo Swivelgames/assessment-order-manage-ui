@@ -1,15 +1,16 @@
 const initialState = {
 	$next: 1038298,
 	1038296: {
-		created: Date.now() - (3 * 60 * 1000),
+		created: Date.now() - (3.5 * 60 * 1000),
+		started: Date.now() - 4000,
+		updated: Date.now() - 4000,
 		status: "in-progress",
-		statusTime: Date.now(),
 		recipes: [ { id: 92736, qty: 3 } ],
 	},
 	1038297: {
 		created: Date.now() - (24 * 1000),
+		updated: Date.now() - (24 * 1000),
 		status: "pending",
-		statusTime: Date.now() - (24 * 1000),
 		recipes: [ { id: 92736, qty: 3 } ],
 	},
 };
