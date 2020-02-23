@@ -10,6 +10,12 @@ const RecipeItem = styled.article`
 
 	padding: 20px;
 
+	${({ remaining }) => remaining === 0 ? `
+		opacity: 0.7;
+
+		h1 { text-decoration: line-through; }
+	` : ''}
+
 	h1 {
 		font-size: 1.8rem;
 		font-weight: 600;
@@ -25,12 +31,6 @@ const RecipeItem = styled.article`
 		list-style-type: none;
 		margin: 10px 0 0;
 		padding-left: 23px;
-
-		li {
-			color: rgba(255,255,255,0.5);
-			font-weight: 600;
-			line-height: 2.5rem;
-		}
 	}
 
 	&:last-of-type {

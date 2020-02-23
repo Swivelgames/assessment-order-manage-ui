@@ -9,8 +9,11 @@ const ModalOverlay = styled.aside`
 
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
+
+	max-height: 100vh;
+	overflow-y: auto;
 
 	padding: 30px;
 

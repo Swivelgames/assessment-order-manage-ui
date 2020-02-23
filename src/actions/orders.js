@@ -3,7 +3,9 @@ import {
 	ORDER_FULFILLED,
 	ORDER_STARTED,
 	ORDER_CANCELLED,
-	ORDER_CREATED
+	ORDER_CREATED,
+
+	INGREDIENTS_USED
 } from './types';
 
 export const startOrder = id => (dispatch, getAppState) => {
@@ -80,3 +82,34 @@ export const cancelOrder = id => (dispatch, getAppState) => {
 	}, orderUndoHalflife);
 };
 
+export const placeOrder = (order) => (dispatch, getAppState) => {
+	const { recipes, ingredients, orders } = getAppState();
+	const { $next: orderId } = orders;
+
+	const recipeIngredients = order.reduce((a, id) => [
+		...Object.keys(recipes[id].ingredients).map((iId) => ({
+			id: iId, qty: recipes[id].ingredients[iId]
+		}))
+	], []).forEach((ingredient) => dispatch({
+		type: INGREDIENTS_USED,
+		payload: ingredient
+	}));
+
+	dispatch({
+		type: ORDER_CREATED,
+		payload: order.map(recipe => ({
+			id: recipe, qty: 1
+		}))
+	});
+
+	setTimeout(() => {
+		const { orders: { [orderId]: order } } = getAppState();
+
+		if(order.status !== 'pending') return;
+
+		dispatch({
+			type: ORDER_STARTED,
+			payload: { id: orderId }
+		});
+	}, 3 * 60 * 1000);
+};

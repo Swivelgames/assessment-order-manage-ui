@@ -3,13 +3,18 @@ import React from 'react';
 import OrderInfo from 'Styled/orders/list-item/info';
 
 const f = n => `${n}`.padStart(2,0);
-const formatTime = (m, s) => `${f(m)}:${f(s)}`;
+const formatTime = (m, s) => `${f(m)}:${f(Math.abs(s))}`;
 
 const calcTimeSince = (a, b) => {
 	const diff = Math.round((a - b) / 1000);
 
-	const m = Math.floor(diff / 60);
-	const s = diff - (m * 60);
+	let m = Math.floor(diff / 60);
+	let s = diff - (m * 60);
+
+	if (m < 0) {
+		m += 1;
+		s -= 59;
+	}
 
 	return [m, s];
 };
@@ -27,7 +32,7 @@ class OrderTimer extends React.Component {
 		let timeSince = [0, 0];
 		if (status === 'pending') {
 			timeSince = calcTimeSince(
-				created, Date.now()
+				Date.now() - (3 * 60 * 1000), created
 			);
 		} else if (status === 'fulfilled') {
 			timeSince = calcTimeSince(

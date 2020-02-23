@@ -35,6 +35,17 @@ const updateOrderById = (id, order, list) => {
 	return { ...list, [id]: newOrder };
 };
 
+const createOrder = (state, recipes) => ({
+	...state,
+	[state.$next]: {
+		created: Date.now(),
+		updated: Date.now(),
+		status: "pending",
+		recipes: [ ...recipes ]
+	},
+	$next: state.$next + 1
+});
+
 const OrdersReducer = (state = initialState, action) => {
 	const { type, payload = {} } = action;
 	const { id } = payload;
@@ -51,6 +62,7 @@ const OrdersReducer = (state = initialState, action) => {
 				[payload.id]: { ...state[payload.id] }
 			};
 		case ORDER_CREATED:
+			return createOrder(state, payload);
 		default:
 			return state;
 	}
