@@ -1,4 +1,5 @@
 import {
+	INGREDIENTS_ADD,
 	INGREDIENTS_USED
 } from 'Actions/types';
 
@@ -8,6 +9,14 @@ const initialState = {
 	34567: { count: 18,		name: "Hamburger Buns",	colors: ['yellow', 'red'] },
 	76543: { count: 0,		name: "Turkey Slices",	colors: ['blue', 'red'] },
 };
+
+const addIngredient = (state, id, qty) => ({
+	...state,
+	[id]: {
+		...state[id],
+		count: Math.max(0, state[id].count + qty)
+	}
+});
 
 const useIngredient = (state, id, qty) => ({
 	...state,
@@ -21,6 +30,8 @@ const IngredientsReducer = (state = initialState, action) => {
 	const { type, payload } = action;
 
 	switch(type) {
+		case INGREDIENTS_ADD:
+			return addIngredient(state, payload.id, payload.qty);
 		case INGREDIENTS_USED:
 			return useIngredient(state, payload.id, payload.qty);
 		default:

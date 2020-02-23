@@ -5,6 +5,7 @@ import {
 	ORDER_CANCELLED,
 	ORDER_CREATED,
 
+	INGREDIENTS_ADD,
 	INGREDIENTS_USED,
 
 	UI_ORDER_FILTER_RESET,
@@ -62,13 +63,25 @@ export const fulfillOrder = id => (dispatch, getAppState) => {
 };
 
 export const cancelOrder = id => (dispatch, getAppState) => {
-	const { orders, ui: { orderUndoHalflife } } = getAppState();
+	const { recipes, ingredients, orders, ui } = getAppState();
+
+	const { orderUndoHalflife } = ui;
+
 	if (!(id in orders)) {
 		console.warn(`DEBUG: startOrder(): Order ${id} was not found in app state`);
 		return;
 	}
 
 	const { [id]: order } = orders;
+
+	const recipeIngredients = order.recipes.reduce((a, { id, qty }) => [
+		...Object.keys(recipes[id].ingredients).map((iId) => ({
+			id: iId, qty: recipes[id].ingredients[iId] * qty
+		}))
+	], []).forEach((ingredient) => dispatch({
+		type: INGREDIENTS_ADD,
+		payload: ingredient
+	}));
 
 	dispatch({
 		type: ORDER_CANCELLED,
