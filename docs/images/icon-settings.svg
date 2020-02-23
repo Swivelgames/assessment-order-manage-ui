@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>icon-settings</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M32.5,40 L7.5,40 C3.3575,40 0,36.64 0,32.5 L0,7.5 C0,3.3575 3.3575,0 7.5,0 L32.5,0 C36.6425,0 40,3.3575 40,7.5 L40,32.5 C40,36.64 36.6425,40 32.5,40 Z M35,7.5 C35,6.12 33.8825,5 32.5,5 L7.5,5 C6.1175,5 5,6.12 5,7.5 L5,32.5 C5,33.8825 6.1175,35 7.5,35 L32.5,35 C33.8825,35 35,33.8825 35,32.5 L35,7.5 Z M27.5,27.5 L27.5,31.25 C27.5,31.94 26.94,32.5 26.25,32.5 C25.56,32.5 25,31.94 25,31.25 L25,27.5 C23.6175,27.5 22.5,26.3825 22.5,25 L22.5,22.5 C22.5,21.12 23.6175,20 25,20 L25,8.75 C25,8.06 25.56,7.5 26.25,7.5 C26.94,7.5 27.5,8.06 27.5,8.75 L27.5,20 C28.8825,20 30,21.12 30,22.5 L30,25 C30,26.3825 28.8825,27.5 27.5,27.5 Z M15,20 L15,31.25 C15,31.94 14.44,32.5 13.75,32.5 C13.06,32.5 12.5,31.94 12.5,31.25 L12.5,20 C11.1175,20 10,18.88 10,17.5 L10,15 C10,13.62 11.1175,12.5 12.5,12.5 L12.5,8.75 C12.5,8.06 13.06,7.5 13.75,7.5 C14.44,7.5 15,8.06 15,8.75 L15,12.5 C16.3825,12.5 17.5,13.62 17.5,15 L17.5,17.5 C17.5,18.88 16.3825,20 15,20 Z" id="path-1"></path>
+        <filter x="-17.5%" y="-12.5%" width="135.0%" height="135.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Dark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Nexus-9" transform="translate(-680.000000, -21.000000)">
+            <g id="Toolbar" transform="translate(25.000000, 23.000000)">
+                <g id="Icons" transform="translate(659.000000, 0.000000)">
+                    <g id="Settings">
+                        <g id="icon-settings">
+                            <g id="Shape">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                <use fill-opacity="0.8" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

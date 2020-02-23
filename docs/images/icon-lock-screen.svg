@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="51px" viewBox="0 0 48 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>icon-lock-screen</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="40" height="40" rx="4"></rect>
+        <filter x="-17.5%" y="-12.5%" width="135.0%" height="135.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M20.625,30 L1.875,30 C0.84,30 0,29.161875 0,28.125 L0,15 C0,13.965 0.84,13.125 1.875,13.125 L1.875,9.375 C1.875,4.19625 6.073125,0 11.25,0 C16.42875,0 20.625,4.19625 20.625,9.375 L20.625,13.125 C21.661875,13.125 22.5,13.965 22.5,15 L22.5,28.125 C22.5,29.161875 21.661875,30 20.625,30 Z M16.875,9.375 C16.875,6.268125 14.355,3.75 11.25,3.75 C8.143125,3.75 5.625,6.268125 5.625,9.375 L5.625,13.125 L16.875,13.125 L16.875,9.375 Z M18.75,16.875 L3.75,16.875 L3.75,26.25 L18.75,26.25 L18.75,16.875 Z" id="path-3"></path>
+        <filter x="-57.8%" y="-23.3%" width="215.6%" height="193.3%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Dark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Nexus-9" transform="translate(-760.000000, -21.000000)">
+            <g id="Toolbar" transform="translate(25.000000, 23.000000)">
+                <g id="Icons" transform="translate(659.000000, 0.000000)">
+                    <g id="Lock-Screen" transform="translate(80.000000, 0.000000)">
+                        <g id="icon-lock-screen">
+                            <g id="Button">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                <use fill-opacity="0.8" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            </g>
+                            <g id="locked" transform="translate(9.000000, 5.000000)" fill-rule="nonzero">
+                                <g id="Shape">
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                                    <use fill-opacity="0.8" fill="#000000" xlink:href="#path-3"></use>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
